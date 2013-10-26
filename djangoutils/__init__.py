@@ -1,3 +1,4 @@
+import views.generic
 
 class NavigationPoint(object):
     name = ''
