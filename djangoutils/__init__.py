@@ -1,4 +1,4 @@
-import views.generic
+import djangoutils.views.generic
 
 class NavigationPoint(object):
     name = ''

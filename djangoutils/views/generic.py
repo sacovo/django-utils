@@ -8,9 +8,9 @@ class ExtraContext(object):
 
     def get_context_data(self, **kwargs):
         context = super(ExtraContext, self).get_context_data(**kwargs)
-        for key, value in self.extra.iteritems():
+        for key, value in self.extra.items():
             context[key] = value(context) if callable(value) else value
-        for key, value in app_specific[self.extra['appname']].iteritems():
+        for key, value in app_specific[self.extra['appname']].items():
             context[key] = value(context) if callable(value) else value
         return context
 
