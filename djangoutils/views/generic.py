@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView,\
-                                 DeleteView, DetailView, ArchiveIndexView
+                                 DeleteView, DetailView, ArchiveIndexView,\
+                                 YearArchiveView, MonthArchiveView
 
 app_specific = {}
 
@@ -17,6 +18,11 @@ class ExtraContext(object):
 class ExtraArchiveIndexView(ExtraContext,ArchiveIndexView):
     pass
 
+class ExtraYearArchiveView(ExtraContext, YearArchiveView):
+    pass
+
+class ExtraMonthArchiveView(ExtraContext, MonthArchiveView):
+    pass
 
 class ExtraDetailView(ExtraContext, DetailView):
     pass
