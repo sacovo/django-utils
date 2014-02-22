@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name='django-utils',
-    version='1.1',
+    version='1.2',
     author='Sandro Covo',
     author_email='sandro@covo.ch',
     packages=['djangoutils', 'djangoutils.views'],
