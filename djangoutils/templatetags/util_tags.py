@@ -18,9 +18,9 @@ def markup(value):
 class StepNode(Node):
 
     def __init__(self, start, stop, step, varname, nodelist_loop=None):
-        self.start = start
-        self.stop = stop
-        self.step = step
+        self.start = template.Variable(start)
+        self.stop = template.Variable(stop)
+        self.step = template.Variable(step)
         self.varname = varname
         self.nodelist_loop = nodelist_loop
 
@@ -91,5 +91,5 @@ def do_for(parser, token):
     stop = bits[4]
     step = bits[5]
     nodelist_loop = parser.parse('endrange')
-    print(parser.next_token())
+    parser.next_token()
     return StepNode(start, stop, step, varname, nodelist_loop)
