@@ -26,8 +26,9 @@ class StepNode(Node):
 
     def render(self, context):
         if self not in context.render_context:
-            context.render_context[self] = range(self.start, self.stop,
-                                                 self.step)
+            start, stop, step = self.start.resolve(), self.stop.resolve(),\
+                self.step.resolve()
+            context.render_context[self] = range(start, stop, step)
         range_iter = context.render_context[self]
         nodelist = []
         loop_dict = context['forloop'] = {
