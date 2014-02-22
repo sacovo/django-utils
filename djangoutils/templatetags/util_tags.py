@@ -89,13 +89,13 @@ def do_for(parser, token):
                                   " 'range x in y': %s" % token.contents)
     varname = bits[1]
     if len(bits) == 4:
-        start = 1
+        start = "1"
         stop = bits[3]
-        step = 1
+        step = "1"
     elif len(bits) == 5:
         start = bits[3]
         stop = bits[4]
-        step = 1
+        step = "1"
     else:
         start = bits[3]
         stop = bits[4]
