@@ -91,5 +91,5 @@ def do_for(parser, token):
     stop = bits[4]
     step = bits[5]
     nodelist_loop = parser.parse('endrange')
-    parser.next_token()
+    print(parser.next_token())
     return StepNode(start, stop, step, varname, nodelist_loop)
