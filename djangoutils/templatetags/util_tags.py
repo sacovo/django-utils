@@ -79,17 +79,17 @@ def do_for(parser, token):
     The range loop sets the same variables as the builtin for loop.
     """
     bits = token.split_contents()
-    if len(bits) < 3:
+    if len(bits) < 4:
         raise TemplateSyntaxError("'range' statments should have at"
                                   " least four words: %s" % token.contents)
-    in_index = 1
+    in_index = 2
     if bits[in_index] != 'in':
         raise TemplateSyntaxError("'range' statements should use the format"
                                   " 'range x in y': %s" % token.contents)
-    varname = bits[0]
-    start = bits[2]
-    stop = bits[3]
-    step = bits[4]
+    varname = bits[1]
+    start = bits[3]
+    stop = bits[4]
+    step = bits[5]
     nodelist_loop = parser.parse('endrange')
 
     return StepNode(start, stop, step, varname, nodelist_loop)
