@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name='django-utils',
-    version='1.2.2',
+    version='1.2.3',
     author='Sandro Covo',
     author_email='sandro@covo.ch',
     packages=['djangoutils', 'djangoutils.views', 'djangoutils.templatetags'],
