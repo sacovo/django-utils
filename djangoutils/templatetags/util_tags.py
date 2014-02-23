@@ -18,7 +18,9 @@ def markup(value):
 
 @register.filter(is_safe=True)
 def markup_down(value):
-    return mark_safe(markdown(value))
+    return mark_safe(markdown(value, extensions=['fenced_code',
+                                                 'attr_list', 'tables',
+                                                 ]))
 
 
 class StepNode(Node):
