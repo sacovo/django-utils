@@ -1,4 +1,5 @@
 from creole import creole2html
+from markdown import markdown
 
 from django.utils.safestring import mark_safe
 from django import template
@@ -13,6 +14,11 @@ register = template.Library()
 @register.filter(is_safe=True)
 def markup(value):
     return mark_safe(creole2html(value))
+
+
+@register.filter(is_safe=True)
+def markup_down(value):
+    return mark_safe(markdown(value))
 
 
 class StepNode(Node):
