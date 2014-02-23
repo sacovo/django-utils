@@ -20,6 +20,7 @@ def markup(value):
 def markup_down(value):
     return mark_safe(markdown(value, extensions=['fenced_code',
                                                  'attr_list', 'tables',
+                                                 'codehilite',
                                                  ]))
 
 
